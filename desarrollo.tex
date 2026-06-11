@@ -1,0 +1,128 @@
+\section{Desarrollo}
+\[
+Z_{9602} =
+\begin{bmatrix}200.0\angle 0.0^\circ\,\Omega & 215.3\angle -4.0^\circ\,\Omega \\ 1415\angle -58.0^\circ\,\Omega & 431.1\angle -4.0^\circ\,\Omega\end{bmatrix}
+\qquad
+Z_{9610} =
+\begin{bmatrix}289.7\angle -2.0^\circ\,\Omega & 215.2\angle -27.0^\circ\,\Omega \\ 159.7\angle -36.0^\circ\,\Omega & 301.5\angle -2.0^\circ\,\Omega\end{bmatrix}
+\]
+
+\subsection{Matrices $Y$ experimentales}
+Los valores se expresan en mS.
+\[
+Y_{9602,\mathrm{exp}} =
+\begin{bmatrix}0.470\angle 0.0^\circ\,\mathrm{{mS}} & 0.240\angle -7.7^\circ\,\mathrm{{mS}} \\ 2.441\angle -4.0^\circ\,\mathrm{{mS}} & 0.361\angle -4.0^\circ\,\mathrm{{mS}}\end{bmatrix}
+\qquad
+Y_{9610,\mathrm{exp}} =
+\begin{bmatrix}3.704\angle 0.0^\circ\,\mathrm{{mS}} & 0.273\angle 0.0^\circ\,\mathrm{{mS}} \\ 2.593\angle 162.0^\circ\,\mathrm{{mS}} & 0.456\angle 0.0^\circ\,\mathrm{{mS}}\end{bmatrix}
+\]
+
+\subsection{Matrices $T$ experimentales}
+\[
+T_{9602,\mathrm{exp}} =
+\begin{bmatrix}0.141\angle 58.0^\circ\, & 409.6\angle -176.0^\circ\,\Omega \\ 0.707\angle 58.0^\circ\,\mathrm{mS} & 0.193\angle -176.0^\circ\,\end{bmatrix}
+\qquad
+T_{9610,\mathrm{exp}} =
+\begin{bmatrix}1.814\angle 34.0^\circ\, & 385.7\angle 18.0^\circ\,\Omega \\ 6.263\angle 36.0^\circ\,\mathrm{mS} & 1.429\angle 18.0^\circ\,\end{bmatrix}
+\]
+
+\subsection{Verificación por transformación desde $Z$}
+Para comparar parámetros se usaron:
+\[
+Y = Z^{-1},
+\qquad
+T_Z =
+\begin{bmatrix}
+\dfrac{Z_{11}}{Z_{21}} &
+\dfrac{Z_{11}Z_{22}-Z_{12}Z_{21}}{Z_{21}} \\[1.2em]
+\dfrac{1}{Z_{21}} &
+\dfrac{Z_{22}}{Z_{21}}
+\end{bmatrix}.
+\]
+
+\begin{table}[H]
+\centering
+\caption{Comparación de $Y_\mathrm{exp}$ contra $Y=Z^{-1}$. Se informa error relativo por entrada.}
+\begin{tabular}{c c}
+\toprule
+Cuadripolo & Error relativo de $Y$ \\
+\midrule
+9602 & $\begin{bmatrix}111.8\% & 100.1\% \\ 60.5\% & 117.3\%\end{bmatrix}$ \\
+9610 & $\begin{bmatrix}35.7\% & 106.9\% \\ 73.8\% & 89.0\%\end{bmatrix}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Comparación de $T_\mathrm{exp}$ contra $T$ obtenido desde $Z$. Se informa error relativo por entrada.}
+\begin{tabular}{c c}
+\toprule
+Cuadripolo & Error relativo de $T$ \\
+\midrule
+9602 & $\begin{bmatrix}0.0\% & 130.3\% \\ 0.0\% & 148.7\%\end{bmatrix}$ \\
+9610 & $\begin{bmatrix}0.0\% & 60.1\% \\ 0.0\% & 34.3\%\end{bmatrix}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observación importante:} los parámetros $A$ y $C$ de $T$ coinciden prácticamente de forma exacta con los calculados a partir de $Z$, pero $B$ y $D$ no. 
+
+\section{Conexión en cascada}
+Para una conexión en cascada se espera:
+\[
+T_{eq,esp} = T_{9602}\,T_{9610}.
+\]
+
+\[
+T_{eq,\mathrm{exp}} =
+\begin{bmatrix}7.213\angle 81.0^\circ\, & 1368\angle 56.0^\circ\,\Omega \\ 31.48\angle 81.0^\circ\,\mathrm{mS} & 5.789\angle 56.0^\circ\,\end{bmatrix}
+\]
+\[
+T_{eq,\mathrm{esp}} =
+\begin{bmatrix}2.416\angle -144.8^\circ\, & 554.9\angle -162.6^\circ\,\Omega \\ 1.093\angle 152.4^\circ\,\mathrm{mS} & 0.249\angle 139.5^\circ\,\end{bmatrix}
+\]
+
+\begin{table}[H]
+\centering
+\caption{Error relativo entre cascada experimental y cascada esperada a partir de los cuadripolos individuales.}
+\begin{tabular}{c}
+\toprule
+Error relativo de $T_{eq}$ \\
+\midrule
+$\begin{bmatrix}375.1\% & 330.7\% \\ 2850.5\% & 2319.5\%\end{bmatrix}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ESTO DA COMO EL CULOOOOOOOOOO (NO ENTREGAR ESTO)
+
+\section{Conexión en serie}
+Según la planilla, se conectó el cuadripolo 9602 en serie con el 9610 invertido. Si se cumple la condición de Brune, se espera:
+\[
+Z_{eq,esp} = Z_{9602} + Z_{9610,\mathrm{invertido}}.
+\]
+
+\[
+Z_{eq,\mathrm{exp}} =
+\begin{bmatrix}687.7\angle 0.0^\circ\,\Omega & 492.6\angle -1.4^\circ\,\Omega \\ 92.05\angle 0.5^\circ\,\Omega & 819.1\angle 0.0^\circ\,\Omega\end{bmatrix}
+\]
+\[
+Z_{eq,\mathrm{esp}} =
+\begin{bmatrix}501.4\angle -1.2^\circ\,\Omega & 360.7\angle -17.6^\circ\,\Omega \\ 1603\angle -54.0^\circ\,\Omega & 720.6\angle -3.2^\circ\,\Omega\end{bmatrix}
+\]
+
+\begin{table}[H]
+\centering
+\caption{Error relativo entre conexión serie experimental y conexión serie esperada.}
+\begin{tabular}{c}
+\toprule
+Error relativo de $Z_{eq}$ \\
+\midrule
+$\begin{bmatrix}37.2\% & 49.1\% \\ 96.8\% & 14.9\%\end{bmatrix}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En particular, $Z_{21}$ presenta una diferencia muy grande. Esto sugiere que la condición de Brune no quedó garantizada.
+\newpage

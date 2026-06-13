@@ -1,3 +1,81 @@
+\section{Esquemáticos Parte 1}
+Se han tomado las mediciones tomando en cuenta el siguiente esquemático:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.5, transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (7, 4.75){} node[anchor=center] at (N1.text){$C$};
+    	\draw (3.268, 4.005) to[sinusoidal current source, l={$V_s$}, label distance=0.13cm] (3.268, 5.505);
+    	\draw (3.25, 4) to[short] (6, 4);
+    	\draw (8, 4) to[short] (10.674, 4.026);
+    	\draw[-latex] (5.476, 4.199) -- (5.476, 5.27);
+    	\draw[-latex] (8.504, 4.212) -- (8.504, 5.283);
+    	\node[shape=rectangle, minimum width=0.489cm, minimum height=0.794cm](N2) at (5.738, 4.856){} node[anchor=center] at (N2.text){$V_1$} node[anchor=north west, align=left, text width=0.101cm, inner sep=6pt] at (5.476, 5.27){};
+    	\node[shape=rectangle, minimum width=0.448cm, minimum height=0.28cm](N3) at (8.242, 4.907){} node[anchor=center] at (N3.text){$V_2$} node[anchor=north west, align=left, text width=0.06cm, inner sep=6pt] at (8, 5.065){};
+    	\draw (5.988, 5.531) to[american resistor, l={$R$}, v=$V_{R1}$, voltage/bump b=2.5, voltage/shift=2, voltage=american] (3.268, 5.505);
+    	\draw (8, 6) to[open] (8, 5.065);
+    	\draw (8, 6) to[open] (8, 5.065);
+    	\draw (8, 5.065) to[open] (7.989, 5.537);
+    	\draw (7.989, 5.537) to[short] (10.664, 5.564);
+    \end{tikzpicture}
+    \caption{Circuito utilizado para las primeras mediciones.}
+    \label{fig:Z11_Y21_AB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.5, transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (7, 4.75){} node[anchor=center] at (N1.text){$C$};
+    	\draw (3.268, 4.005) to[sinusoidal current source, l={$V_s$}, label distance=0.13cm] (3.268, 5.505);
+    	\draw (3.25, 4) to[short] (6, 4);
+    	\draw (8, 4) to[short] (10.674, 4.026);
+    	\draw (10.621, 5.492) to[american resistor, l={$R$}, v=$V_{R2}$, voltage/bump b=2.5, voltage/shift=2, voltage=american, name=R] (8.002, 5.465);
+    	\draw[-latex] (5.476, 4.199) -- (5.476, 5.27);
+    	\draw[-latex] (8.504, 4.212) -- (8.504, 5.283);
+    	\node[shape=rectangle, minimum width=0.489cm, minimum height=0.794cm](N2) at (5.738, 4.856){} node[anchor=center] at (N2.text){$V_1$} node[anchor=north west, align=left, text width=0.101cm, inner sep=6pt] at (5.476, 5.27){};
+    	\node[shape=rectangle, minimum width=0.448cm, minimum height=0.28cm](N3) at (8.242, 4.907){} node[anchor=center] at (N3.text){$V_2$} node[anchor=north west, align=left, text width=0.06cm, inner sep=6pt] at (8, 5.065){};
+    	\draw (10.621, 5.492) |- (10.603, 3.987);
+    	\draw (5.988, 5.531) to[american resistor, l={$R$}, v=$V_{R1}$, voltage/bump b=2.5, voltage/shift=2, voltage=american] (3.268, 5.505);
+    \end{tikzpicture}
+    \caption{Circuito utilizado para las segundas mediciones.}
+    \label{fig:Y11_Y21_CD}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.5, transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (7, 4.75){} node[anchor=center] at (N1.text){$C$};
+    	\draw (10.621, 3.992) to[sinusoidal current source, l_={$V_s$}, label distance=0.13cm] (10.621, 5.492);
+    	\draw (3.25, 4) to[short] (6, 4);
+    	\draw (8, 4) to[short] (10.674, 4.026);
+    	\draw (10.621, 5.492) to[american resistor, l={$R$}, v=$V_{R2}$, voltage/bump b=2.5, voltage/shift=2, voltage=american, name=R] (8.002, 5.465);
+    	\draw[-latex] (5.476, 4.199) -- (5.476, 5.27);
+    	\draw[-latex] (8.504, 4.212) -- (8.504, 5.283);
+    	\node[shape=rectangle, minimum width=0.489cm, minimum height=0.794cm](N2) at (5.738, 4.856){} node[anchor=center] at (N2.text){$V_1$} node[anchor=north west, align=left, text width=0.101cm, inner sep=6pt] at (5.476, 5.27){};
+    	\node[shape=rectangle, minimum width=0.448cm, minimum height=0.28cm](N3) at (8.242, 4.907){} node[anchor=center] at (N3.text){$V_2$} node[anchor=north west, align=left, text width=0.06cm, inner sep=6pt] at (8, 5.065){};
+    	\draw (3.268, 5.505) |- (3.25, 4);
+    	\draw (5.988, 5.531) to[american resistor, l={$R$}, v=$V_{R1}$, voltage/bump b=2.5, voltage/shift=2, voltage=american] (3.268, 5.505);
+    \end{tikzpicture}
+ \caption{Circuito utilizado para las terceras mediciones.}
+ \label{fig:Z12_Y22}
+\end{figure}
+\begin{figure}[H]
+    \centering   
+    \begin{tikzpicture}[scale=1.5, transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (7, 4.75){} node[anchor=center] at (N1.text){$C$};
+    	\draw (10.621, 3.992) to[sinusoidal current source, l_={$V_s$}, label distance=0.13cm] (10.621, 5.492);
+    	\draw (3.25, 5.5) to[american resistor, l_={$R$}, label distance=0.13cm, v^=$V_{R1}$, voltage/distance from node=0.7, voltage/bump b=2.5, voltage/shift=2, voltage=american] (6, 5.5);
+    	\draw (3.25, 4) to[short] (6, 4);
+    	\draw (8, 4) to[short] (10.674, 4.026);
+    	\draw (10.621, 5.492) to[american resistor, l={$R$}, v=$V_{R2}$, voltage/bump b=2.5, voltage/shift=2, voltage=american, name=R] (8.002, 5.465);
+    	\draw (3.25, 5.5) -| (3.25, 4);
+    \end{tikzpicture}
+    \caption{Circuito utilizado para las cuartas mediciones.}
+    \label{fig:Z12_Z22}
+\end{figure}
+
 \section{Desarrollo}
 \subsection{Matrices $Z$ experimentales}
 
@@ -6,8 +84,8 @@ Los valores se expresan en $\Omega$.
 \[
 Z_{9602,\text{exp}} =
 \begin{bmatrix}
-200{,}0\angle 0{,}0^\circ & 215{,}3\angle -4{,}0^\circ \\
-1415\angle -58{,}0^\circ & 431{,}1\angle -4{,}0^\circ
+218,8\angle -11{,}0^\circ & 85,97\angle -68{,}0^\circ \\
+97,2\angle -73{,}0^\circ & 158{,}0\angle -66,0^\circ
 \end{bmatrix}
 \ \Omega
 \]
@@ -15,8 +93,8 @@ Z_{9602,\text{exp}} =
 \[
 Z_{9610,\text{exp}} =
 \begin{bmatrix}
-289{,}7\angle -2{,}0^\circ & 215{,}2\angle -27{,}0^\circ \\
-159{,}7\angle -36{,}0^\circ & 301{,}5\angle -2{,}0^\circ
+326,96\angle-29,0^\circ & 164,85\angle -63,24^\circ \\
+19,67\angle -52,0^\circ & 230,07\angle -40,24^\circ
 \end{bmatrix}
 \ \Omega
 \]
@@ -27,8 +105,8 @@ Los valores se expresan en mS.
 \[
 Y_{9602,\text{exp}} =
 \begin{bmatrix}
-0{,}470\angle 0{,}0^\circ & 0{,}240\angle -7{,}7^\circ \\
-2{,}441\angle -4{,}0^\circ & 0{,}361\angle -4{,}0^\circ
+4,72\angle 61,6^\circ & 10,51\angle -1,36^\circ \\
+38,67\angle -13,0^\circ & 6,68\angle -58,78^\circ
 \end{bmatrix}
 \ \text{mS}
 \]
@@ -36,8 +114,8 @@ Y_{9602,\text{exp}} =
 \[
 Y_{9610,\text{exp}} =
 \begin{bmatrix}
-3{,}704\angle 0{,}0^\circ & 0{,}273\angle 0{,}0^\circ \\
-2{,}593\angle 162{,}0^\circ & 0{,}456\angle 0{,}0^\circ
+3,78\angle 6,32^\circ & 8,82\angle -1,68^\circ \\
+4,0\angle -27,0^\circ & 4,92\angle -16,82^\circ
 \end{bmatrix}
 \ \text{mS}
 \]
@@ -46,116 +124,85 @@ Y_{9610,\text{exp}} =
 \[
 T_{9602,\text{exp}} =
 \begin{bmatrix}
-0{,}141\angle 58{,}0^\circ & 409{,}6\angle -176{,}0^\circ\,\Omega \\
-0{,}707\angle 58{,}0^\circ\,\text{mS} & 0{,}193\angle -176{,}0^\circ
+2,25\angle 62{,}0^\circ & 10,28\angle 72,96^\circ\,\text{mS} \\
+-25,86\angle 13,0^\circ\,\Omega & -0,12\angle 74,6^\circ
 \end{bmatrix}
 \]
 
 \[
 T_{9610,\text{exp}} =
 \begin{bmatrix}
-1{,}814\angle 34{,}0^\circ & 385{,}7\angle 18{,}0^\circ\,\Omega \\
-6{,}263\angle 36{,}0^\circ\,\text{mS} & 1{,}429\angle 18{,}0^\circ
+16,62\angle 23,0^\circ & 50,83\angle 52,03^\circ\,\text{mS} \\
+-250,0\angle 27,0 ^\circ\,\Omega & -0,94\angle 33,32^\circ
 \end{bmatrix}
 \]
 
-\subsection{Verificación por transformación desde $Z$}
-Para comparar parámetros se usaron:
-\[
-Y = Z^{-1},
-\qquad
-T_Z =
-\begin{bmatrix}
-\dfrac{Z_{11}}{Z_{21}} &
-\dfrac{Z_{11}Z_{22}-Z_{12}Z_{21}}{Z_{21}} \\[1.2em]
-\dfrac{1}{Z_{21}} &
-\dfrac{Z_{22}}{Z_{21}}
-\end{bmatrix}.
-\]
-
-\begin{table}[H]
-\centering
-\caption{Comparación de $Y_\mathrm{exp}$ contra $Y=Z^{-1}$. Se informa error relativo por entrada.}
-\begin{tabular}{c c}
-\toprule
-Cuadripolo & Error relativo de $Y$ \\
-\midrule
-9602 & $\begin{bmatrix}111.8\% & 100.1\% \\ 60.5\% & 117.3\%\end{bmatrix}$ \\
-9610 & $\begin{bmatrix}35.7\% & 106.9\% \\ 73.8\% & 89.0\%\end{bmatrix}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Comparación de $T_\mathrm{exp}$ contra $T$ obtenido desde $Z$. Se informa error relativo por entrada.}
-\begin{tabular}{c c}
-\toprule
-Cuadripolo & Error relativo de $T$ \\
-\midrule
-9602 & $\begin{bmatrix}0.0\% & 130.3\% \\ 0.0\% & 148.7\%\end{bmatrix}$ \\
-9610 & $\begin{bmatrix}0.0\% & 60.1\% \\ 0.0\% & 34.3\%\end{bmatrix}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{Observación importante:} los parámetros $A$ y $C$ de $T$ coinciden prácticamente de forma exacta con los calculados a partir de $Z$, pero $B$ y $D$ no. 
-
 \section{Conexión en cascada}
-Para una conexión en cascada se espera:
-\[
-T_{eq,esp} = T_{9602}\,T_{9610}.
-\]
+Se sigue el siguiente esquemático:
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1, transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (1.326, 5.724){} node[anchor=center] at (N1.text){$C 9602$};
+    	\draw (2.326, 4.974) to[short] (5, 5);
+    	\draw[-latex] (-0.199, 5.172) -- (-0.199, 6.244);
+    	\draw[-latex] (8.433, 5.253) -- (8.433, 6.324);
+    	\node[shape=rectangle, minimum width=0.489cm, minimum height=0.794cm](N2) at (0.063, 5.829){} node[anchor=center] at (N2.text){$V_1$} node[anchor=north west, align=left, text width=0.101cm, inner sep=6pt] at (-0.199, 6.244){};
+    	\node[shape=rectangle, minimum width=0.448cm, minimum height=0.28cm](N3) at (8.17, 5.949){} node[anchor=center] at (N3.text){$V_2$} node[anchor=north west, align=left, text width=0.06cm, inner sep=6pt] at (7.928, 6.106){};
+    	\draw (2.326, 6.974) to[open] (2.326, 6.039);
+    	\draw (2.326, 6.974) to[open] (2.326, 6.039);
+    	\draw (2.326, 6.039) to[open] (2.315, 6.511);
+    	\draw (2.315, 6.511) to[short] (4.989, 6.537);
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N4) at (6.928, 5.791){} node[anchor=center] at (N4.text){$C9610$};
+    	\draw (2.315, 6.511) to[open] (2.326, 4.974);
+    	\draw (2.583, 6.492) to[open] (2.593, 6.505);
+    	\draw (2.005, 7.671) to[open] (2.588, 4.968);
+    	\draw (4.989, 6.537) -| (5.934, 6.534) |- (5, 5) -| (5.912, 4.998) |- (5.956, 5.032);
+    	\draw (7.901, 6.589) -- (9.989, 6.589);
+    	\draw (7.889, 4.987) -| (10, 5);
+    	\draw (0.356, 4.97) |- (-2.24, 4.985);
+    	\draw (0.339, 6.575) -| (-2.321, 6.567);
+   \end{tikzpicture}
+   \caption{Esquemático conexion en cascada}
+\end{figure}
+Para las mediciones replicamos los esquemáticos de la Figura \ref{fig:Z11_Y21_AB} y \ref{fig:Y11_Y21_CD}
 \[
 T_{eq,\mathrm{exp}} =
-\begin{bmatrix}7.213\angle 81.0^\circ\, & 1368\angle 56.0^\circ\,\Omega \\ 31.48\angle 81.0^\circ\,\mathrm{mS} & 5.789\angle 56.0^\circ\,\end{bmatrix}
+\begin{bmatrix}6,0\angle 81,0^\circ\, & 27,36\angle 87,09^\circ\,\mathrm{mS} \\ 541,18\angle 55,0^\circ\,\Omega & 2,40\angle 61,12^\circ\,\end{bmatrix}
 \]
-\[
-T_{eq,\mathrm{esp}} =
-\begin{bmatrix}2.416\angle -144.8^\circ\, & 554.9\angle -162.6^\circ\,\Omega \\ 1.093\angle 152.4^\circ\,\mathrm{mS} & 0.249\angle 139.5^\circ\,\end{bmatrix}
-\]
-
-\begin{table}[H]
-\centering
-\caption{Error relativo entre cascada experimental y cascada esperada a partir de los cuadripolos individuales.}
-\begin{tabular}{c}
-\toprule
-Error relativo de $T_{eq}$ \\
-\midrule
-$\begin{bmatrix}375.1\% & 330.7\% \\ 2850.5\% & 2319.5\%\end{bmatrix}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-ESTO DA COMO EL CULOOOOOOOOOO (NO ENTREGAR ESTO)
 
 \section{Conexión en serie}
-Según la planilla, se conectó el cuadripolo 9602 en serie con el 9610 invertido. Si se cumple la condición de Brune, se espera:
-\[
-Z_{eq,esp} = Z_{9602} + Z_{9610,\mathrm{invertido}}.
-\]
+Según la planilla, se conectó el cuadripolo 9602 en serie con el 9610 invertido.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[transform shape]
+    	% Paths, nodes and wires:
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N1) at (1.326, 5.724){} node[anchor=center] at (N1.text){$C 9602$};
+    	\draw[-latex] (-2.071, 1.626) -| (-2.041, 6.158);
+    	\draw[-latex] (4.28, 1.577) -| (4.328, 6.136);
+    	\node[shape=rectangle, minimum width=0.489cm, minimum height=0.794cm](N2) at (-1.565, 3.84){} node[anchor=center] at (N2.text){$V_1$} node[anchor=north west, align=left, text width=0.101cm, inner sep=6pt] at (-1.827, 4.254){};
+    	\node[shape=rectangle, minimum width=0.448cm, minimum height=0.28cm](N3) at (3.759, 4.197){} node[anchor=center] at (N3.text){$V_2$} node[anchor=north west, align=left, text width=0.06cm, inner sep=6pt] at (3.517, 4.355){};
+    	\draw (2.326, 6.974) to[open] (2.326, 6.039);
+    	\draw (2.326, 6.974) to[open] (2.326, 6.039);
+    	\draw (2.326, 6.039) to[open] (2.315, 6.511);
+    	\node[shape=rectangle, draw, line width=1pt, minimum width=1.965cm, minimum height=2.465cm](N4) at (1.33, 2.15){} node[anchor=center] at (N4.text){$C9610$};
+    	\draw (2.315, 6.511) to[open] (2.326, 4.974);
+    	\draw (2.583, 6.492) to[open] (2.593, 6.505);
+    	\draw (2.005, 7.671) to[open] (2.588, 4.968);
+    	\draw (0.35, 6.452) -| (-2.996, 6.487);
+    	\draw (2.315, 6.511) -| (5.342, 6.547);
+    	\draw (0.351, 5.026) |- (0, 5) |- (-0.014, 2.885) -| (0.343, 2.91);
+    	\draw (2.326, 4.974) -| (2.588, 4.968) |- (2.304, 2.888);
+    	\draw (0.341, 1.441) -| (-2.828, 1.436);
+    	\draw (2.326, 1.403) -| (4.961, 1.383);
+    \end{tikzpicture}
+    \caption{Esquemático de conexión en serie}
+\end{figure}
 
+Para este caso se han replicado los esquemáticos de las figuras \ref{fig:Z11_Y21_AB} y \ref{fig:Z12_Z22}
 \[
 Z_{eq,\mathrm{exp}} =
 \begin{bmatrix}687.7\angle 0.0^\circ\,\Omega & 492.6\angle -1.4^\circ\,\Omega \\ 92.05\angle 0.5^\circ\,\Omega & 819.1\angle 0.0^\circ\,\Omega\end{bmatrix}
 \]
-\[
-Z_{eq,\mathrm{esp}} =
-\begin{bmatrix}501.4\angle -1.2^\circ\,\Omega & 360.7\angle -17.6^\circ\,\Omega \\ 1603\angle -54.0^\circ\,\Omega & 720.6\angle -3.2^\circ\,\Omega\end{bmatrix}
-\]
-
-\begin{table}[H]
-\centering
-\caption{Error relativo entre conexión serie experimental y conexión serie esperada.}
-\begin{tabular}{c}
-\toprule
-Error relativo de $Z_{eq}$ \\
-\midrule
-$\begin{bmatrix}37.2\% & 49.1\% \\ 96.8\% & 14.9\%\end{bmatrix}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-En particular, $Z_{21}$ presenta una diferencia muy grande. Esto sugiere que la condición de Brune no quedó garantizada.
 \newpage
